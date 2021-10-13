@@ -4,7 +4,7 @@
 const fetch = require('node-fetch')
 
 
-var m = 50;
+var m = 61;
 var s = 60;
 var delay = m * s * 1000;
 
