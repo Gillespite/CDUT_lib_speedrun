@@ -68,4 +68,4 @@ var people2 = function () {
   //添加后加到taskitem里
 }
 
-}
+
