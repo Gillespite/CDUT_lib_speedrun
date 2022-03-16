@@ -60,7 +60,7 @@ var goget = function (openid) {
     "mode": "cors"
   })
     .then((response) => {
-      console.log("people1:" + now)
+      console.log(openid+":" + now)
       //console.log(response)
     })
 }
