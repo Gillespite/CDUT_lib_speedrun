@@ -3,6 +3,9 @@
 
 const fetch = require('node-fetch')
 
+//把openid放到下面即可
+var openIdList=["oozmJsxaUQrTgff0GzjilUA29Mbk","oozmJs2OJwz3p1SNqR_n0nCGtE3M"]
+
 
 var m = 61;
 var s = 60;
@@ -36,12 +39,11 @@ var run = function () {
 run();
 
 var taskitem = function () {
-  people1();
-  people2();
+  openIdList.forEach(id=>goget(id));
 }
 
-var people1 = function () {
-  fetch("http://mlib.cdut.cn/yy/WxYy2.aspx?openId=oozmJsxaUQrTgff0GzjilUA29Mbk", {
+var goget = function (openid) {
+  fetch("http://mlib.cdut.cn/yy/WxYy2.aspx?openId="+openid, {
     "headers": {
       "accept":
         "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -53,7 +55,7 @@ var people1 = function () {
     },
     "referrerPolicy": "strict-origin-when-cross-origin",
     "body":
-      "__VIEWSTATE=oZpKHeGhWeOM0TY%2Fw%2BA25%2Bp9e1VG6Q1N%2FbiAj2gPGjucv3jvTAJnnDo%2BpwaiVDjkybYdPTgMDkmBcP4747udPLDfjeLrAGAEdBCsoKkC0ye%2FQgOf6zHj8Qk39CoPknx%2FLNrqbm65QG1GQ3a8K5%2Fw0698YrUtfwMyHCcc5XwQq%2BCk2ADyz0AuwcmcweZtlVULqhSl1OeIOeNgVWQu9H0NX3qpsJcrLcs%2FPOPfiPk0KwtFH9SfmcMJSmiXjYslsQtG6KUeYzMT3S48WRaTR1xLBkcpXjTuX6gDLQEHhpF5vLnflSR8z8ZzG1XFSL3weRCeLHEZHztvhQLAv56sEz6LY9fzV2zXCMbQRcdD6q2PCJ1wu7KdKDNiRE%2Fva69vbhk18fYLzHuicL0gQJM0vlOGjeC0hHNdNyQsbVLp%2F%2F%2B7zctiepiO1ju3jQGfTbuhvKvQUfAzcx9Z5sHSrfqwyqp1u10XAbB4V%2BsTKwwEeoZWPCw%3D&__VIEWSTATEGENERATOR=29D80D0A&__EVENTVALIDATION=Xb7BqXDDVpD8StTNnSd%2BcaHNI7dC8emybyRCB8yoRtMRRVZ3XW5QNSBaKKS896DqREBaSU8vyIHlYtpug40ZpoFFeZV39SM5A2nmdwLyT8YLWFPdkTpYBo3MAVQpjLN%2Fi216K%2BfxdsvSCSPm1opHFfXvk%2B6zeVkC%2FB6WrQM4fcPeTDzkCb%2BaRsyezJN97eG7MVhGuZEdRWH11OGUd%2BK0biTc3Yp%2BB96xks6xJs6OY0j1m2CjShZmskaask1Udljq&hiddenOpenId=oozmJsxaUQrTgff0GzjilUA29Mbk&hiddenTimestamp=" + now + "&card_id=&card_password=&Reservation=",
+      "__VIEWSTATE=oZpKHeGhWeOM0TY%2Fw%2BA25%2Bp9e1VG6Q1N%2FbiAj2gPGjucv3jvTAJnnDo%2BpwaiVDjkybYdPTgMDkmBcP4747udPLDfjeLrAGAEdBCsoKkC0ye%2FQgOf6zHj8Qk39CoPknx%2FLNrqbm65QG1GQ3a8K5%2Fw0698YrUtfwMyHCcc5XwQq%2BCk2ADyz0AuwcmcweZtlVULqhSl1OeIOeNgVWQu9H0NX3qpsJcrLcs%2FPOPfiPk0KwtFH9SfmcMJSmiXjYslsQtG6KUeYzMT3S48WRaTR1xLBkcpXjTuX6gDLQEHhpF5vLnflSR8z8ZzG1XFSL3weRCeLHEZHztvhQLAv56sEz6LY9fzV2zXCMbQRcdD6q2PCJ1wu7KdKDNiRE%2Fva69vbhk18fYLzHuicL0gQJM0vlOGjeC0hHNdNyQsbVLp%2F%2F%2B7zctiepiO1ju3jQGfTbuhvKvQUfAzcx9Z5sHSrfqwyqp1u10XAbB4V%2BsTKwwEeoZWPCw%3D&__VIEWSTATEGENERATOR=29D80D0A&__EVENTVALIDATION=Xb7BqXDDVpD8StTNnSd%2BcaHNI7dC8emybyRCB8yoRtMRRVZ3XW5QNSBaKKS896DqREBaSU8vyIHlYtpug40ZpoFFeZV39SM5A2nmdwLyT8YLWFPdkTpYBo3MAVQpjLN%2Fi216K%2BfxdsvSCSPm1opHFfXvk%2B6zeVkC%2FB6WrQM4fcPeTDzkCb%2BaRsyezJN97eG7MVhGuZEdRWH11OGUd%2BK0biTc3Yp%2BB96xks6xJs6OY0j1m2CjShZmskaask1Udljq&hiddenOpenId="+openid+"&hiddenTimestamp=" + now + "&card_id=&card_password=&Reservation=",
     "method": "POST",
     "mode": "cors"
   })
@@ -63,9 +65,5 @@ var people1 = function () {
     })
 }
 
-var people2 = function () {
-  //可以按该格式添加多个人
-  //添加后加到taskitem里
-}
 
 
