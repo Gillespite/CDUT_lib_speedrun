@@ -4,7 +4,7 @@
 const fetch = require('node-fetch')
 
 //把openid放到下面即可
-var openIdList=["oozmJsxaUQrTgff0GzjilUA29Mbk","oozmJs2OJwz3p1SNqR_n0nCGtE3M"]
+var openIdList=["一串字符1","一串字符2"]
 
 
 var m = 61;
